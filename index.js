@@ -57,13 +57,13 @@ async function run() {
 
         // delete api 
 
-            app.delete('/services/:id',async(req,res)=>{
-                const id= req.params.id;
-                const query={_id: ObjectId(id)};
-                const result= await servicesCollection.deleteOne(query);
-                res.json(result);
-            })
-            
+        app.delete('/services/:id', async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: ObjectId(id) };
+            const result = await servicesCollection.deleteOne(query);
+            res.json(result);
+        })
+
 
     } finally {
         // await client.close();
@@ -81,8 +81,6 @@ app.get('/', (req, res) => {
 });
 
 
-// user id : arabian
-// user pass : c1YVXlrnNv0LKvid
 
 
 app.listen(port, () => {
